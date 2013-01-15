@@ -27,6 +27,7 @@
     "underscore": "~1.4.3"
   },
   "devDependencies": {
+    "cradle": "~0.6.4",
     "mkdirp": "~0.3.4",
     "mocha": "1.x",
     "request": "2.x",

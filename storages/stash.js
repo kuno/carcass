@@ -36,6 +36,8 @@ function initialize(instance, options) {
     debug('initializing %s', stashPath);
 
     // A reference.
+    // Cannot have stash initialized without the root path created.
+    // TODO: another way.
     instance.__defineGetter__('stash', function() {
         return require('stash')(stashPath);
     });

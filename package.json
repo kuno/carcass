@@ -20,19 +20,20 @@
   "url": "",
   "dependencies": {
     "configurable": "~0.0.1",
-    "debug": "~0.7.0",
+    "debug": "~0.7.2",
     "deferred": "~0.6.1",
     "eson": "~0.4.1",
     "express": "~3.1.0",
     "methods": "~0.0.1",
+    "seed": "~0.4.4",
     "underscore": "~1.4.4"
   },
   "devDependencies": {
     "mkdirp": "~0.3.4",
     "mocha": "1.x",
     "request": "2.x",
-    "should": "1.x",
-    "stash": "~0.0.3"
+    "seed-filestore": "~0.3.0",
+    "should": "1.x"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha ./test/*.mocha.js"

@@ -3,7 +3,6 @@ var debug = require('debug')('carcass:Factory:Storage');
 var carcass = require('carcass');
 var seed = carcass.seed;
 var _ = require('underscore');
-var EventEmitter = require('events').EventEmitter;
 
 // Storage
 // ---
@@ -15,34 +14,17 @@ module.exports = function(args) {
 
     args = args || {};
 
-    // Also support only an initialize function as the argument.
-    if (typeof args === 'function') {
-        args = {
-            initialize: args
-        };
-    }
-
     // The concrete factory.
     function builder(options) {
-        // Merge options from builder and factory.
-        options = _.extend(_.omit(args, 'initialize', 'id'), options);
+        // .
+        var Store = args.store || seed.Store;
+
+        // TODO: inherit / rebuild custom methods.
 
         // .
-        var instance = {
-            title: 'Storage'
-        };
+        var instance = new Store(options);
 
-        // Mixin.
-        carcass.mixable(instance);
-        instance.mixin(_.omit(options, 'prototype'));
-
-        // .
-        EventEmitter.call(instance);
-        instance.mixin(EventEmitter.prototype);
-
-        // TODO: requires CRUD methods.
-        // TODO: map variants of method names?
-
+        // XXX
         // Get ID from data.
         // Requires data; either an object with an id or just an id.
         // Returns an id or nothing; doesn't return any error.
@@ -58,11 +40,6 @@ module.exports = function(args) {
             }
             callback();
         };
-
-        // Invoke initialize function.
-        if (args.initialize) {
-            args.initialize(instance, options);
-        }
 
         return instance;
     };

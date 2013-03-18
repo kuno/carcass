@@ -6,18 +6,19 @@
   },
   "name": "carcass",
   "description": "An Express.js framework with a bunch of tools and assumptions.",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "contributors": [],
   "keywords": [
     "carcass",
     "express",
-    "framework"
+    "promise",
+    "deferred"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/devo-ps/carcass.git"
   },
-  "url": "",
+  "url": "https://github.com/devo-ps/carcass",
   "dependencies": {
     "configurable": "~0.0.1",
     "debug": "~0.7.2",

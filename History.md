@@ -1,4 +1,16 @@
 
+0.3.2 / 2013-03-11 
+==================
+
+  * Added a test case for carcass.httpError().
+  * Expose Express as carcass.express.
+
+0.3.1 / 2013-02-25 
+==================
+
+  * Updated package keywords and url.
+  * Added carcass.httpError().
+
 0.3.0 (Promise) / 2013-02-18 
 ==================
 

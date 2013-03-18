@@ -1,7 +1,7 @@
 var carcass = require('carcass');
 var should = require('should');
 
-describe('Factories / Storage:', function() {
+describe.skip('Factories / Storage:', function() {
     it('should be a function.', function() {
         carcass.factories.should.have.property('Storage');
         carcass.factories.Storage.should.be.a('function');

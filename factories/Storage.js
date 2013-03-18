@@ -1,11 +1,9 @@
 var debug = require('debug')('carcass:Factory:Storage');
 
 var carcass = require('carcass');
+var seed = carcass.seed;
 var _ = require('underscore');
 var EventEmitter = require('events').EventEmitter;
-
-// .
-var cache = {};
 
 // Storage
 // ---
@@ -33,16 +31,6 @@ module.exports = function(args) {
         var instance = {
             title: 'Storage'
         };
-
-        // .
-        if (args.cache) {
-            cache[args.cache] = cache[args.cache] || {};
-            var cacheId = options.id || 'global';
-            if (cache[args.cache][cacheId]) {
-                return cache[args.cache][cacheId];
-            }
-            cache[args.cache][cacheId] = instance;
-        }
 
         // Mixin.
         carcass.mixable(instance);
